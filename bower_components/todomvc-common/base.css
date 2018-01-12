@@ -226,15 +226,15 @@ label[for='toggle-all'] {
 #todo-list li .priority-panel {
 	display: none;
 	height: auto;
+	width: 100px;
 	position: absolute;
 	top: 0;
 	bottom: 0;
-	left: -14px;
+	left: -108px;
 
 	flex-direction: row;
 	justify-content: space-around;
 	padding: 0 4px;
-
 	background-color: #fcfcfc;
 	z-index: 10;
 	/* Mobile Safari */
@@ -251,8 +251,16 @@ label[for='toggle-all'] {
 	display: flex;
 }
 
-#todo-list li .priority-btn:after {
+#todo-list li .priority-1-btn:after {
 	content: '!';
+}
+
+#todo-list li .priority-2-btn:after {
+	content: '!!';
+}
+
+#todo-list li .priority-3-btn:after {
+	content: '!!!';
 }
 
 #todo-list li .toggle:after {
@@ -287,11 +295,31 @@ label[for='toggle-all'] {
 	text-decoration: line-through;
 }
 
-#todo-list li.priority:not(.completed) label {
+/*#todo-list li.priority:not(.completed) label {
+	color: #d66;
+}*/
+
+#todo-list li.priority .priority-1-btn:after {
+	color: #49dcb1;
+}
+
+#todo-list li .priority-1-btn:hover {
+	color: #49dcb1;
+}
+
+#todo-list li.priority .priority-2-btn:after {
+	color: #efde5d;
+}
+
+#todo-list li .priority-2-btn:hover {
+	color: #efde5d;
+}
+
+#todo-list li.priority .priority-3-btn:after {
 	color: #d66;
 }
 
-#todo-list li.priority .priority-btn:after {
+#todo-list li .priority-3-btn:hover {
 	color: #d66;
 }
 
