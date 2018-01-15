@@ -18,7 +18,10 @@ var app = app || {};
 		// The DOM events specific to an item.
 		events: {
 			'click .toggle': 'toggleCompleted',
-			'click .priority-btn': 'togglePriority',
+			// 'click .priority-btn': 'setPriority',
+			'click .priority-1-btn': 'togglePriority_1',
+			'click .priority-2-btn': 'togglePriority_2',
+			'click .priority-3-btn': 'togglePriority_3',
 			'dblclick label': 'edit',
 			'click .edit-btn': 'edit',
 			'click .destroy': 'clear',
@@ -73,9 +76,70 @@ var app = app || {};
 			this.model.toggle();
 		},
 
-		// Toggle the `"priority"` state of the model.
-		togglePriority: function () {
-			this.model.priority();
+		togglePriority_1: function () {
+			console.log('clicked togglePriority_1!');
+
+			if (this.$el.hasClass("priority1")) {
+				console.log('this todo is priority1');
+				this.$el.removeClass("priority1");
+				this.model.priority();
+				console.log('and now its not');
+				console.log('priority: ' + this.model.get('priority'));
+			}
+			else {
+				console.log('this todo was not priority1');
+				this.$el.removeClass("priority2 priority3");
+				this.$el.addClass("priority1");
+				console.log('now it is!');
+				if (this.model.get('priority') == false) {
+					this.model.priority();
+				}
+				console.log('priority: ' + this.model.get('priority'));
+			}
+		},
+
+		togglePriority_2: function () {
+			console.log('clicked togglePriority_2!');
+
+			if (this.$el.hasClass("priority2")) {
+				console.log('this todo is priority2, heh');
+				this.$el.removeClass("priority2");
+				this.model.priority();
+				console.log('and now its not!');
+				console.log('priority: ' + this.model.get('priority'));
+			}
+			else {
+				console.log ('this todo was not priority2');
+				this.$el.removeClass("priority1 priority3");
+				this.$el.addClass("priority2");
+				console.log('now it is!');
+				if (this.model.get('priority') == false) {
+					this.model.priority();
+				}
+				console.log('priority: ' + this.model.get('priority'));
+			}
+		},
+
+		togglePriority_3: function () {
+			console.log('clicked togglePriority_3!');
+
+			if (this.$el.hasClass("priority3")) {
+				console.log('this todo is priority 3');
+				this.$el.removeClass("priority3");
+				this.model.priority();
+				console.log('and now its not!');
+				console.log('priority: ' + this.model.get('priority'));
+			}
+			else {
+				console.log('this todo was not priority3');
+				this.$el.removeClass("priority1 priority2");
+				this.$el.addClass("priority3");
+				console.log('now it is!');
+				if (this.model.get('priority') == false) {
+					this.model.priority();
+				}
+				console.log('priority: ' + this.model.get('priority'));
+			}
 		},
 
 		// Switch this view into `"editing"` mode, displaying the input field.

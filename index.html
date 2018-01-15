@@ -26,9 +26,9 @@
 		<script type="text/template" id="item-template">
 			<div class="view">
 				<div class="priority-panel">
-					<button class="priority-1-btn"></button>
-					<button class="priority-2-btn"></button>
-					<button class="priority-3-btn"></button>
+					<button class="priority-btn, priority-1-btn"></button>
+					<button class="priority-btn, priority-2-btn"></button>
+					<button class="priority-btn, priority-3-btn"></button>
 				</div>
 				<input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
 				<label><%- title %><%= completed ? ' -- done' : '' %></label>
